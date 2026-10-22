@@ -248,7 +248,7 @@ const HTML_TEMPLATE = `
 </head>
 <body>
   <div id="loader-overlay">
-    <img src="/utils/logo.jpg" alt="TANVIR XMD" class="loader-logo" onerror="this.src='https://i.ibb.co/RGGkkRVp/bot-8801760234907-1792170204786.jpg'">
+    <img src="https://www.image2url.com/r2/default/images/1792666435587-9f90d45c-f67b-4409-9066-d99ba91c3cd9.jpg" alt="TANVIR XMD" class="loader-logo">
     <h1 class="loader-title">TANVIR <span>XMD</span></h1>
     <p class="loader-subtitle">PREMIUM PAIR PORTAL</p>
     <div class="loader-dots">
@@ -262,7 +262,7 @@ const HTML_TEMPLATE = `
     <div id="landing-page" class="page active">
       <div class="header">
         <div class="header-left">
-          <img src="/utils/logo.jpg" alt="Logo" class="logo" onerror="this.src='https://i.ibb.co/RGGkkRVp/bot-8801760234907-1792170204786.jpg'">
+          <img src="https://www.image2url.com/r2/default/images/1792666435587-9f90d45c-f67b-4409-9066-d99ba91c3cd9.jpg" alt="Logo" class="logo">
           <div>
             <div class="header-title">TANVIR - XMD</div>
             <div class="header-subtitle">WHATSAPP AUTOMATION</div>
@@ -277,7 +277,7 @@ const HTML_TEMPLATE = `
       <div class="welcome-card">
         <div class="welcome-title">WELCOME <br>TANVIR - XMD ✓</div>
         <div class="welcome-text">We are here to provide you with the best multi-session bot experience.</div>
-        <img src="/utils/logo.jpg" alt="Bot" class="welcome-img" onerror="this.src='https://i.ibb.co/RGGkkRVp/bot-8801760234907-1792170204786.jpg'">
+        <img src="https://www.image2url.com/r2/default/images/1792666435587-9f90d45c-f67b-4409-9066-d99ba91c3cd9.jpg" alt="Bot" class="welcome-img">
       </div>
 
       <div class="stats-grid">
@@ -480,7 +480,7 @@ const HTML_TEMPLATE = `
       </div>
 
       <div class="media-card">
-        <video id="pairVideo" class="media-img" src="/utils/My-dream-carvideo.mp4" autoplay loop muted playsinline></video>
+        <iframe src="https://videotourl.net/v/a3fadd62-b9ca-4479-bd0c-ac35070a51f1/embed" class="media-img" style="border: none; width: 100%; height: 180px;" allow="autoplay; fullscreen" allowfullscreen></iframe>
         <div class="media-mute" id="muteBtn" onclick="toggleMute()">
           <svg id="muteIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
         </div>
@@ -580,6 +580,8 @@ const HTML_TEMPLATE = `
     function toggleMute() {
       const v = document.getElementById('pairVideo');
       const icon = document.getElementById('muteIcon');
+      // আইফ্রেম হলে ভিডিও কন্ট্রোল সরাসরি কাজ করবে না, তাই চেক দেওয়া হলো যাতে এরর না দেয়
+      if (!v || typeof v.muted === 'undefined') return; 
       v.muted = !v.muted;
       if (v.muted) {
         icon.innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>';
